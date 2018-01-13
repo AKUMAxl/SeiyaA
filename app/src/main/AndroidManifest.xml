@@ -10,6 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
-        />
+        >
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="N4yjmdbUXGHzsmtVNGVRCD3Bnz3VSibi" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"> </service>
+
+    </application>
 
 </manifest>

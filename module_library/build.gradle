@@ -12,6 +12,12 @@ android {
     }
     buildToolsVersion '26.0.2'
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 dependencies {
@@ -95,4 +101,5 @@ dependencies {
     //图表
 
     //implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
 }

@@ -12,12 +12,14 @@ import com.xl.module_library.Base.BaseApplication;
 
 public class MainApplication extends BaseApplication {
 
+
+
+
     @Override
     public void onCreate() {
         super.onCreate();
-        //2 test
-    }
 
+    }
 
     @Override
     protected void attachBaseContext(Context base) {

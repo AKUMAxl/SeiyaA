@@ -32,17 +32,16 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("E:\\workspace\\yangchedou.keystore")
-            storePassword "891010"
-            keyAlias "yangchedou"
-            keyPassword "891010"
+            storeFile file('E:/seiyaA.jks')
+            storePassword 'xuliang823'
+            keyAlias 'seiyaa'
+            keyPassword 'xuliang823'
         }
-
         debug {
-            storeFile file("E:\\workspace\\yangchedou.keystore")
-            storePassword "891010"
-            keyAlias "yangchedou"
-            keyPassword "891010"
+            storeFile file('E:/seiyaA.jks')
+            storePassword 'xuliang823'
+            keyAlias 'seiyaa'
+            keyPassword 'xuliang823'
         }
     }
 
@@ -86,9 +85,12 @@ android {
 
 dependencies {
 
-    if (isModule.toBoolean()){
+    //百度地图
+    implementation files('libs/BaiduLBS_Android.jar')
+
+    if (isModule.toBoolean()) {
         implementation project(":module_library")
-    }else {
+    } else {
         implementation project(":module_library")
         implementation project(":module_main")
         implementation project(":module_login")
@@ -97,5 +99,4 @@ dependencies {
         implementation project(":module_person")
 
     }
-
 }
