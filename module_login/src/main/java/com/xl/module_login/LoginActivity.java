@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.xl.module_library.Base.BaseActivity;
 import com.xl.module_library.Bean.User;
 import com.xl.module_library.NetWork.ApiManager;
@@ -18,6 +21,8 @@ import com.xl.module_library.Util.ChangeActivityUtil;
 public class LoginActivity extends BaseActivity{
 
     TextView textView,is_tv;
+
+    private AdView mAdView;
 
     @Override
     public void loadView() {
@@ -77,8 +82,14 @@ public class LoginActivity extends BaseActivity{
             }
         });
 
-        getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        mAdView = findViewById(R.id.ad_view);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
 
+        // Start loading the ad in the background.
+        mAdView.loadAd(adRequest);
     }
 
 

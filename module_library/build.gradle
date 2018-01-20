@@ -99,7 +99,8 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
 
     //图表
-
     //implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
+
+    compile 'com.google.android.gms:play-services-ads:11.8.0'
 }
