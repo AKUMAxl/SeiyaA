@@ -1,84 +1,117 @@
 package com.xl.module_library.Bean;
 
+import java.util.List;
+
 public class User {
 
-    private Integer id;
-    private String username;
-    private String password;
-    private String birthday;
-    private String sex;
-    private String address;
 
-    public User() {
+    /**
+     * userList : [{"birthday":"2017-12-15","password":"123546","address":"sdf","sex":"男","id":1,"username":"akuma"},{"birthday":"2017-12-15","password":"123546","address":"sdf","sex":"男","id":1,"username":"akuma"}]
+     * userCount : 2
+     */
+
+    private String userCount;
+    private List<UserListBean> userList;
+
+    public String getUserCount() {
+        return userCount;
     }
 
-    public User(Integer id, String username, String password, String birthday, String sex, String address) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.address = address;
+    public void setUserCount(String userCount) {
+        this.userCount = userCount;
     }
 
-    public Integer getId() {
-        return id;
+    public List<UserListBean> getUserList() {
+        return userList;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserList(List<UserListBean> userList) {
+        this.userList = userList;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public static class UserListBean {
+        /**
+         * birthday : 2017-12-15
+         * password : 123546
+         * address : sdf
+         * sex : 男
+         * id : 1
+         * username : akuma
+         */
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+        private String birthday;
+        private String password;
+        private String address;
+        private String sex;
+        private int id;
+        private String username;
 
-    public String getPassword() {
-        return password;
-    }
+        public String getBirthday() {
+            return birthday;
+        }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+        public void setBirthday(String birthday) {
+            this.birthday = birthday;
+        }
 
-    public String getBirthday() {
-        return birthday;
-    }
+        public String getPassword() {
+            return password;
+        }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-    public String getSex() {
-        return sex;
-    }
+        public String getAddress() {
+            return address;
+        }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+        public void setAddress(String address) {
+            this.address = address;
+        }
 
-    public String getAddress() {
-        return address;
-    }
+        public String getSex() {
+            return sex;
+        }
 
-    public void setAddress(String address) {
-        this.address = address;
+        public void setSex(String sex) {
+            this.sex = sex;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        @Override
+        public String toString() {
+            return "UserListBean{" +
+                    "birthday='" + birthday + '\'' +
+                    ", password='" + password + '\'' +
+                    ", address='" + address + '\'' +
+                    ", sex='" + sex + '\'' +
+                    ", id=" + id +
+                    ", username='" + username + '\'' +
+                    '}';
+        }
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", sex='" + sex + '\'' +
-                ", address='" + address + '\'' +
+                "userCount='" + userCount + '\'' +
+                ", userList=" + userList +
                 '}';
     }
-
 }

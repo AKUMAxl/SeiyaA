@@ -26,6 +26,6 @@ public class MyLocationListener extends BDAbstractLocationListener {
         int errorCode = location.getLocType();
         //获取定位类型、定位错误返回码，具体信息可参照类参考中BDLocation类中的说明
 
-        Log.i("xl","定位结果："+latitude+"--"+longitude+"--"+radius+"--"+coorType+"--"+errorCode);
+        //Log.i("xl","定位结果："+latitude+"--"+longitude+"--"+radius+"--"+coorType+"--"+errorCode);
     }
 }

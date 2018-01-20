@@ -1,5 +1,7 @@
 package com.xl.module_login;
 
+import android.content.Context;
+import android.net.NetworkInfo;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -15,7 +17,7 @@ import com.xl.module_library.Util.ChangeActivityUtil;
 @Route(path = "/module_login/login_activity")
 public class LoginActivity extends BaseActivity{
 
-    TextView textView;
+    TextView textView,is_tv;
 
     @Override
     public void loadView() {
@@ -28,6 +30,7 @@ public class LoginActivity extends BaseActivity{
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("xl","点击登录");
                 //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
                 ApiManager manager = new ApiManager(getApplication());
                 manager.getUser(1, new SimpleCallback<User>() {
@@ -48,6 +51,34 @@ public class LoginActivity extends BaseActivity{
                 });
             }
         });
+
+        is_tv = findViewById(R.id.is_tv);
+        is_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("xl","点击InputStream");
+                ApiManager manager = new ApiManager(getApplication());
+                manager.InputStreamTest(new SimpleCallback() {
+                    @Override
+                    public void onStart() {
+                        Log.i("xl","inputStream onStart");
+                    }
+
+                    @Override
+                    public void onNext(Object o) {
+                        Log.i("xl","inputStream onNext");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.i("xl","inputStream onComplete");
+                    }
+                });
+            }
+        });
+
+        getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
     }
 
 

@@ -25,10 +25,10 @@ public class MainApplication extends BaseApplication {
         //声明LocationClient类
         mLocationClient.registerLocationListener(myListener);
         //注册监听函数
-
         setLocationOption();
-
         mLocationClient.start();
+
+        //log配置
     }
 
     @Override

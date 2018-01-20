@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Environment;
 
 
+import com.orhanobut.logger.Logger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,10 +67,10 @@ public class OkHttpUtil {
             Request request = chain.request();
 
             //---------请求之前-----
-            //Logger.d("network interceptor:begin");
+            Logger.d("network interceptor:begin");
             Response  response = chain.proceed(request);
-            //Logger.i("response state:"+response.isSuccessful());
-            //Logger.d("network interceptor:end");
+            Logger.i("response state:"+response.isSuccessful());
+            Logger.d("network interceptor:end");
             return response;
         }
     };
