@@ -50,3 +50,6 @@ dependencies {
     implementation project(":module_library")
 
 }
+repositories {
+    mavenCentral()
+}

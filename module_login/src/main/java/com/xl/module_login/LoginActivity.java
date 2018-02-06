@@ -16,6 +16,7 @@ import com.xl.module_library.NetWork.ApiManager;
 import com.xl.module_library.NetWork.ApiService;
 import com.xl.module_library.NetWork.SimpleCallback;
 import com.xl.module_library.Util.ChangeActivityUtil;
+import com.xl.module_library.Util.LocationUtils;
 
 @Route(path = "/module_login/login_activity")
 public class LoginActivity extends BaseActivity{
@@ -36,8 +37,9 @@ public class LoginActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 Log.i("xl","点击登录");
+                LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
                 //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
-                ApiManager manager = new ApiManager(getApplication());
+                /*ApiManager manager = new ApiManager(getApplication());
                 manager.getUser(1, new SimpleCallback<User>() {
                     @Override
                     public void onStart() {
@@ -53,7 +55,7 @@ public class LoginActivity extends BaseActivity{
                     public void onComplete() {
 
                     }
-                });
+                });*/
             }
         });
 
@@ -62,7 +64,9 @@ public class LoginActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 Log.i("xl","点击InputStream");
-                ApiManager manager = new ApiManager(getApplication());
+                LocationUtils.getIntance(oThis.getApplicationContext()).locationStop();
+
+                /*ApiManager manager = new ApiManager(getApplication());
                 manager.InputStreamTest(new SimpleCallback() {
                     @Override
                     public void onStart() {
@@ -78,7 +82,7 @@ public class LoginActivity extends BaseActivity{
                     public void onComplete() {
                         Log.i("xl","inputStream onComplete");
                     }
-                });
+                });*/
             }
         });
 
