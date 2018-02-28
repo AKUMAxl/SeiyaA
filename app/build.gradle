@@ -102,6 +102,7 @@ dependencies {
         implementation project(":module_firstpage")
         implementation project(":module_service")
         implementation project(":module_person")
+        implementation project(":module_nba")
 
     }
 

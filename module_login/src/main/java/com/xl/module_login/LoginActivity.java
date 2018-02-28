@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.orhanobut.logger.Logger;
 import com.xl.module_library.Base.BaseActivity;
 import com.xl.module_library.Bean.User;
 import com.xl.module_library.NetWork.ApiManager;
@@ -37,8 +38,10 @@ public class LoginActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 Log.i("xl","点击登录");
-                LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
+
+                //LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
                 //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
+                ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_nba/nba_activity",null,false);
                 /*ApiManager manager = new ApiManager(getApplication());
                 manager.getUser(1, new SimpleCallback<User>() {
                     @Override
@@ -64,7 +67,7 @@ public class LoginActivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 Log.i("xl","点击InputStream");
-                LocationUtils.getIntance(oThis.getApplicationContext()).locationStop();
+                //LocationUtils.getIntance(oThis.getApplicationContext()).locationStop();
 
                 /*ApiManager manager = new ApiManager(getApplication());
                 manager.InputStreamTest(new SimpleCallback() {

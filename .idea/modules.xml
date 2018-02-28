@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SeiyaA.iml" filepath="$PROJECT_DIR$/SeiyaA.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_firstpage/module_home.iml" filepath="$PROJECT_DIR$/module_firstpage/module_home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_firstpage/module_firstpage.iml" filepath="$PROJECT_DIR$/module_firstpage/module_firstpage.iml" />
+      <module fileurl="file://E:\workspace\SeiyaA\module_firstpage\module_home.iml" filepath="E:\workspace\SeiyaA\module_firstpage\module_home.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_library/module_library.iml" filepath="$PROJECT_DIR$/module_library/module_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_login/module_login.iml" filepath="$PROJECT_DIR$/module_login/module_login.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_nba/module_nba.iml" filepath="$PROJECT_DIR$/module_nba/module_nba.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_person/module_person.iml" filepath="$PROJECT_DIR$/module_person/module_person.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_service/module_service.iml" filepath="$PROJECT_DIR$/module_service/module_service.iml" />
     </modules>

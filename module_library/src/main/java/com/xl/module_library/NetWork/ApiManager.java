@@ -3,6 +3,7 @@ package com.xl.module_library.NetWork;
 import android.app.Application;
 
 import com.google.gson.Gson;
+import com.xl.module_library.Bean.NBA_JH;
 import com.xl.module_library.Bean.User;
 
 import org.json.JSONException;
@@ -37,6 +38,16 @@ public class ApiManager {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ExceptionSubscriber<User>(simpleCallback,application));
+
+    }
+
+    public void getNbaInfo( SimpleCallback<NBA_JH> simpleCallback){
+
+        apiService.getNbaInfo("b03482e11e18d4a830cf47ddd78caaef")
+                .concatMap(new BaseResponseFuncJH<NBA_JH>())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ExceptionSubscriber<NBA_JH>(simpleCallback,application));
 
     }
 

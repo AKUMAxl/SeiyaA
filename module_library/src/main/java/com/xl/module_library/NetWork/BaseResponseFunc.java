@@ -5,9 +5,6 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
 
-/**
- * Created by wanglj on 16/7/4.
- */
 
 public class BaseResponseFunc<T> implements Function<BaseResponse<T>, Observable<T>> {
 
@@ -19,5 +16,12 @@ public class BaseResponseFunc<T> implements Function<BaseResponse<T>, Observable
         }else{
             return Observable.just(tBaseResponse.getResult());
         }
+        /*if (tBaseResponse.getError_code()!=0) {
+            return Observable.error(new Throwable(tBaseResponse.getReason()));
+        }else{
+            return Observable.just(tBaseResponse.getResult());
+        }*/
+        //return null;
     }
+
 }

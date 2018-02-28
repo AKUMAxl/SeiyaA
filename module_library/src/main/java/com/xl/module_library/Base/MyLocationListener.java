@@ -43,7 +43,7 @@ public class MyLocationListener extends BDAbstractLocationListener {
         String addr = location.getAddrStr();
         String locationDescribe = location.getLocationDescribe();
 
-        Log.i("xl","11定位结果："+location.getLongitude()+","+location.getLatitude()+"--"+location.getRadius()+"--"+location.getCoorType()+"--"+location.getLocType());
-        Log.i("xl","22定位结果："+addr+"--"+locationDescribe);
+        Log.i("xl","定位信息："+location.getLongitude()+","+location.getLatitude()+"--"+location.getRadius()+"--"+location.getCoorType()+"--"+location.getLocType());
+        Log.i("xl","定位结果："+addr+"--"+locationDescribe);
     }
 }

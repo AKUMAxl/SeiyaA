@@ -1,5 +1,6 @@
 package com.xl.module_library.NetWork;
 
+import com.xl.module_library.Bean.NBA_JH;
 import com.xl.module_library.Bean.User;
 
 import java.io.InputStream;
@@ -31,4 +32,7 @@ public interface ApiService {
     @Headers({"Content-Length:70","Content-Type:application/json"})
     @POST("http://47.93.54.254:8080/rootService/rest/signin")
     Observable<BaseResponse> InputStreamTest(@Body RequestBody body);
+
+    @POST("http://op.juhe.cn/onebox/basketball/nba")
+    Observable<BaseResponseJH<NBA_JH>> getNbaInfo(@Query("key") String key);
 }
