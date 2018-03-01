@@ -585,6 +585,17 @@ public class NBA_JH {
                         '}';
             }
         }
+
+        @Override
+        public String toString() {
+            return "ListBean{" +
+                    "title='" + title + '\'' +
+                    ", tr=" + tr +
+                    ", bottomlink=" + bottomlink +
+                    ", live=" + live +
+                    ", livelink=" + livelink +
+                    '}';
+        }
     }
 
     public static class TeammatchBean {

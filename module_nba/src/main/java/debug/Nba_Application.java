@@ -2,6 +2,7 @@ package debug;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.xl.module_library.Base.BaseApplication;
 
@@ -22,7 +23,7 @@ public class Nba_Application extends BaseApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         // dex突破65535的限制
-        //MultiDex.install(this);
+        MultiDex.install(this);
     }
 
 }

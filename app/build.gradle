@@ -92,7 +92,7 @@ dependencies {
 
     //百度地图
     //implementation files('libs/BaiduLBS_Android.jar')
-
+    compile 'com.android.support:multidex:1.0.1'
     if (isModule.toBoolean()) {
         implementation project(":module_library")
     } else {
