@@ -27,7 +27,7 @@ public class NbaModelImpl implements NbaModel {
             }
 
             @Override
-            public void onNext(NBA_JH nba_jh){
+            public void onNext(NBA_JH nba_jh) {
                 Logger.i("nba_jh:"+nba_jh.toString());
                 getDataResult.onSuccess(nba_jh);
             }
@@ -36,7 +36,14 @@ public class NbaModelImpl implements NbaModel {
             public void onComplete() {
 
             }
+
+            @Override
+            public void onError(String errorStr) {
+
+            }
         });
+
+
     }
 
 }

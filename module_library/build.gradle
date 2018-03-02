@@ -104,4 +104,16 @@ dependencies {
     api 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     compile 'com.google.android.gms:play-services-ads:11.8.0'
     api 'com.android.support:cardview-v7:27.1.0'
+
+    if(rootProject.ext.minSdkVersion>20){
+        //ijkPlayer
+        compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.8'
+        compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.8'
+    }
+
 }

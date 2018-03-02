@@ -88,8 +88,8 @@ public class BaseApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        for (ApplicationDelegate delegate : mAppDelegateList) {
+        /*for (ApplicationDelegate delegate : mAppDelegateList) {
             delegate.onTrimMemory(level);
-        }
+        }*/
     }
 }

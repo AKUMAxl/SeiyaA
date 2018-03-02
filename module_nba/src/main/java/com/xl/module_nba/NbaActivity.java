@@ -15,11 +15,13 @@ import com.scwang.smartrefresh.layout.header.BezierRadarHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.xl.module_library.Base.BaseActivity;
+import com.xl.module_library.Base.SectionDecoration;
 import com.xl.module_library.Bean.NBA_JH;
 import com.xl.module_library.NetWork.ApiManager;
 import com.xl.module_library.NetWork.SimpleCallback;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -30,7 +32,8 @@ import java.util.List;
 @Route(path = "/module_nba/nba_activity")
 public class NbaActivity extends BaseActivity implements NbaView{
 
-    private List<NBA_JH.ListBean> list = new ArrayList<>();
+    private List<NBA_JH.ListBean.TrBean> list = new ArrayList<>();
+    private List<String> list_section = new ArrayList<>();
     private RecyclerView rv;
     private NbaAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -50,8 +53,33 @@ public class NbaActivity extends BaseActivity implements NbaView{
 
         // 设置Item添加和移除的动画
         rv.setItemAnimator(new DefaultItemAnimator());
+
         // 设置Item之间间隔样式
-        //rv.addItemDecoration(mDividerItemDecoration);
+        rv.addItemDecoration(new SectionDecoration(list_section,getApplication(), new SectionDecoration.DecorationCallback() {
+            //返回标记id (即每一项对应的标志性的字符串)
+            @Override
+            public String getGroupId(int position) {
+                if (list_section.size()==position||list_section.size()<position){
+                    return "-1";
+                }
+                if(list_section.get(position)!=null) {
+                    return list_section.get(position);
+                }
+                return "-1";
+            }
+
+            //获取同组中的第一个内容
+            @Override
+            public String getGroupFirstLine(int position) {
+                if (list_section.size()==position||list_section.size()<position){
+                    return "";
+                }
+                if(list_section.get(position)!=null) {
+                    return list_section.get(position);
+                }
+                return "";
+            }
+        }));
     }
 
     @Override
@@ -62,9 +90,10 @@ public class NbaActivity extends BaseActivity implements NbaView{
         nbaPsersenter.getData(getApplication());
 
         //设置 Header 为 BezierRadar 样式
-        refreshLayout.setRefreshHeader(new BezierRadarHeader(this).setEnableHorizontalDrag(true));
+        //refreshLayout.setRefreshHeader(new BezierRadarHeader(this).setEnableHorizontalDrag(true));
         //设置 Footer 为 球脉冲
-        refreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
+        /*refreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
+        refreshLayout.setPrimaryColorsId(R.color.bottom_icon, R.color.colorWhite);*/
         refreshLayout.setPrimaryColorsId(R.color.bottom_icon, R.color.colorWhite);
         //refreshLayout.setEnableLoadmore(true);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -90,7 +119,16 @@ public class NbaActivity extends BaseActivity implements NbaView{
     @Override
     public void setData(NBA_JH nba_jh) {
         list.clear();
-        list.addAll(nba_jh.getList());
+        String date = "";
+        for (int i=0;i<nba_jh.getList().size();i++){
+            date = nba_jh.getList().get(i).getTitle();
+            for (int j=0;j<nba_jh.getList().get(i).getTr().size();j++){
+                list.add(nba_jh.getList().get(i).getTr().get(j));
+                //list_section.add(String.valueOf(nba_jh.getList().get(i).getTr().get(j).getStatus()));
+                list_section.add(date);
+            }
+        }
+
         mAdapter.updateData(list);
     }
 
