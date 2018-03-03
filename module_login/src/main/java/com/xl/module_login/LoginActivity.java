@@ -40,8 +40,8 @@ public class LoginActivity extends BaseActivity{
                 Log.i("xl","点击登录");
 
                 //LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
-                //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
-                ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_nba/nba_activity",null,false);
+                ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
+                //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_nba/nba_activity",null,false);
                 /*ApiManager manager = new ApiManager(getApplication());
                 manager.getUser(1, new SimpleCallback<User>() {
                     @Override
@@ -88,15 +88,17 @@ public class LoginActivity extends BaseActivity{
                 });*/
             }
         });
-
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        //ca-app-pub-3940256099942544~3347511713  demo
+        //ca-app-pub-9643696608722970~7343467312  SeiyaA
+        /*MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         mAdView = findViewById(R.id.ad_view);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
 
         // Start loading the ad in the background.
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
+
     }
 
 

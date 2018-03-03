@@ -3,7 +3,10 @@ package com.xl.module_nba;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.google.gson.Gson;
@@ -39,12 +42,18 @@ public class NbaActivity extends BaseActivity implements NbaView{
     private RecyclerView.LayoutManager mLayoutManager;
     private NbaPsersenter nbaPsersenter;
     private RefreshLayout refreshLayout;
+    private Toolbar toolbar;
 
     @Override
     public void loadView() {
         setContentView(R.layout.activity_nba);
         rv = findViewById(R.id.rv);
         refreshLayout = findViewById(R.id.nba_sfl);
+        refreshLayout.setEnableLoadmore(true);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mAdapter = new NbaAdapter(getApplicationContext(),list);
@@ -87,21 +96,17 @@ public class NbaActivity extends BaseActivity implements NbaView{
         // 设置adapter
         rv.setAdapter(mAdapter);
         nbaPsersenter = new NbaPersenterImpl(this);
-        nbaPsersenter.getData(getApplication());
+        //nbaPsersenter.getData(getApplication());
 
-        //设置 Header 为 BezierRadar 样式
-        //refreshLayout.setRefreshHeader(new BezierRadarHeader(this).setEnableHorizontalDrag(true));
-        //设置 Footer 为 球脉冲
-        /*refreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
-        refreshLayout.setPrimaryColorsId(R.color.bottom_icon, R.color.colorWhite);*/
-        refreshLayout.setPrimaryColorsId(R.color.bottom_icon, R.color.colorWhite);
-        //refreshLayout.setEnableLoadmore(true);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
-                Logger.i("--------刷新");
-                //orderPersenter.getMinatainOrderList(String.valueOf(current_state),0,20);
-                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+                refreshlayout.getState();
+                if (refreshlayout.isEnableRefresh()){
+                    nbaPsersenter.getData(getApplication());
+                }else {
+                    refreshlayout.finishRefresh(2000,false);
+                }
             }
         });
 
@@ -109,7 +114,6 @@ public class NbaActivity extends BaseActivity implements NbaView{
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
                 Logger.i("--------加载");
-                //orderPersenter.getMinatainOrderList(String.valueOf(current_state),0,20);
                 refreshlayout.finishLoadmore(2000/*true*/);//传入false表示加载失败
             }
         });
@@ -117,19 +121,36 @@ public class NbaActivity extends BaseActivity implements NbaView{
     }
 
     @Override
+    public void firstRequestNet() {
+        super.firstRequestNet();
+        refreshLayout.autoRefresh();
+    }
+
+    @Override
     public void setData(NBA_JH nba_jh) {
+        refreshLayout.finishLoadmore(true);
+        refreshLayout.finishRefresh(true);
         list.clear();
         String date = "";
         for (int i=0;i<nba_jh.getList().size();i++){
             date = nba_jh.getList().get(i).getTitle();
             for (int j=0;j<nba_jh.getList().get(i).getTr().size();j++){
                 list.add(nba_jh.getList().get(i).getTr().get(j));
-                //list_section.add(String.valueOf(nba_jh.getList().get(i).getTr().get(j).getStatus()));
                 list_section.add(date);
             }
         }
-
         mAdapter.updateData(list);
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

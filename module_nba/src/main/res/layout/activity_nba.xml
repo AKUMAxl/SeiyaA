@@ -1,52 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:srl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolsBarH"
+        android:background="?attr/colorPrimary"
+        app:title="@string/nba"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationContentDescription="@string/app_name"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nba_sfl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/nba_sfl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        srl:srlEnableLoadmore="true"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         >
 
-    <com.scwang.smartrefresh.layout.header.ClassicsHeader
-        android:id="@+id/nba_sfl_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srlAccentColor="@android:color/white"
-        app:srlPrimaryColor="@color/colorPrimary"
-        app:srlTextSizeTitle="16sp"
-        app:srlTextSizeTime="10dp"
-        app:srlTextTimeMarginTop="2dp"
-        app:srlEnableLastTime="true"
-        app:srlFinishDuration="500"
-        app:srlDrawableSize="20dp"
-        app:srlDrawableArrowSize="20dp"
-        app:srlDrawableProgressSize="20dp"
-        app:srlDrawableMarginRight="20dp"
-        app:srlClassicsSpinnerStyle="Scale">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:id="@+id/nba_sfl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@android:color/white"
+            app:srlPrimaryColor="@color/colorPrimary"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextSizeTime="10dp"
+            app:srlTextTimeMarginTop="2dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlDrawableSize="20dp"
+            app:srlDrawableArrowSize="20dp"
+            app:srlDrawableProgressSize="20dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlClassicsSpinnerStyle="Scale">
 
-    </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+        </com.scwang.smartrefresh.layout.header.ClassicsHeader>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
 
-    </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.RecyclerView>
 
-     <com.scwang.smartrefresh.layout.footer.ClassicsFooter
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"/>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 

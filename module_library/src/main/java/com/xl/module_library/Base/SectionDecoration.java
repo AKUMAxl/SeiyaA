@@ -42,7 +42,7 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
         this.callback = decorationCallback;
         //设置悬浮栏的画笔---paint
         paint = new Paint();
-        paint.setColor(res.getColor(R.color.colorPrimaryDark));
+        paint.setColor(res.getColor(R.color.colorPrimary));
 
         //设置悬浮栏中文本的画笔
         textPaint = new TextPaint();
