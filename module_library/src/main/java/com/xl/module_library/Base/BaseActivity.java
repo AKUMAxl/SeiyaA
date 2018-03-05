@@ -28,16 +28,13 @@ public abstract class BaseActivity extends AppCompatActivity implements NetState
 
     public static NetStateChangeReceiver.netStateChangeListener netStateChangeListener;
 
-    public Activity oThis;
-
     public Boolean crrentHasNet = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        oThis = this;//获得当前activity实例
         //butterknife.ButterKnife.inject(this);
-        ViewManager.getInstance().addActivity(oThis);
+        ViewManager.getInstance().addActivity(this);
         //检测网络状态 以决定是否加载网络错误页
         if (checkNetState()){
             loadView();
@@ -67,6 +64,13 @@ public abstract class BaseActivity extends AppCompatActivity implements NetState
         super.onResume();
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ViewManager.getInstance().finishActivity(this);
+    }
+
     @Override
     public void finish() {
         super.finish();
@@ -74,7 +78,7 @@ public abstract class BaseActivity extends AppCompatActivity implements NetState
     }
 
     private boolean checkNetState(){
-        int currentNetState = NetManagerUtil.getNEtState(oThis);
+        int currentNetState = NetManagerUtil.getNEtState(this);
         if (currentNetState==NetManagerUtil.NET_NONE){
             return false;
         }

@@ -128,6 +128,7 @@ public class ViewManager {
      */
     public void exitApp(Context context) {
         try {
+            context = context.getApplicationContext();
             finishAllActivity();
             //杀死后台进程需要在AndroidManifest中声明android.permission.KILL_BACKGROUND_PROCESSES；
             android.app.ActivityManager activityManager = (android.app.ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);

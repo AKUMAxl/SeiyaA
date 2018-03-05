@@ -40,25 +40,8 @@ public class LoginActivity extends BaseActivity{
                 Log.i("xl","点击登录");
 
                 //LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
-                ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,true);
-                //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_nba/nba_activity",null,false);
-                /*ApiManager manager = new ApiManager(getApplication());
-                manager.getUser(1, new SimpleCallback<User>() {
-                    @Override
-                    public void onStart() {
+                ChangeActivityUtil.getIntance().ToNextActivity(LoginActivity.this,"/module_main/main_activity",null,true);
 
-                    }
-
-                    @Override
-                    public void onNext(User user) {
-                        Log.i("xl","---"+user.toString());
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });*/
             }
         });
 
@@ -66,26 +49,8 @@ public class LoginActivity extends BaseActivity{
         is_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("xl","点击InputStream");
-                //LocationUtils.getIntance(oThis.getApplicationContext()).locationStop();
+                ChangeActivityUtil.getIntance().ToNextActivity(LoginActivity.this,"/module_nba/nba_activity",null,false);
 
-                /*ApiManager manager = new ApiManager(getApplication());
-                manager.InputStreamTest(new SimpleCallback() {
-                    @Override
-                    public void onStart() {
-                        Log.i("xl","inputStream onStart");
-                    }
-
-                    @Override
-                    public void onNext(Object o) {
-                        Log.i("xl","inputStream onNext");
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        Log.i("xl","inputStream onComplete");
-                    }
-                });*/
             }
         });
         //ca-app-pub-3940256099942544~3347511713  demo
