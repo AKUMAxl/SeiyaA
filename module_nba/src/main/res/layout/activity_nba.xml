@@ -38,18 +38,18 @@
             android:id="@+id/nba_sfl_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srlAccentColor="@android:color/white"
-            app:srlPrimaryColor="@color/colorPrimary"
-            app:srlTextSizeTitle="16sp"
-            app:srlTextSizeTime="10dp"
-            app:srlTextTimeMarginTop="2dp"
-            app:srlEnableLastTime="true"
-            app:srlFinishDuration="500"
-            app:srlDrawableSize="20dp"
-            app:srlDrawableArrowSize="20dp"
-            app:srlDrawableProgressSize="20dp"
-            app:srlDrawableMarginRight="20dp"
-            app:srlClassicsSpinnerStyle="Scale">
+            srl:srlAccentColor="@android:color/white"
+            srl:srlPrimaryColor="@color/colorPrimary"
+            srl:srlTextSizeTitle="16sp"
+            srl:srlTextSizeTime="10dp"
+            srl:srlTextTimeMarginTop="2dp"
+            srl:srlEnableLastTime="true"
+            srl:srlFinishDuration="500"
+            srl:srlDrawableSize="20dp"
+            srl:srlDrawableArrowSize="20dp"
+            srl:srlDrawableProgressSize="20dp"
+            srl:srlDrawableMarginRight="20dp"
+            srl:srlClassicsSpinnerStyle="Scale">
 
         </com.scwang.smartrefresh.layout.header.ClassicsHeader>
 
@@ -58,7 +58,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-
         </android.support.v7.widget.RecyclerView>
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter

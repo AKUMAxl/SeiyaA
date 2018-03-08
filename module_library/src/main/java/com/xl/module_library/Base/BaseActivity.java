@@ -8,6 +8,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.xl.module_library.Manager.ViewManager;
 import com.xl.module_library.NetState.NetManagerUtil;

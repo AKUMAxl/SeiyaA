@@ -8,7 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -39,7 +39,7 @@ ext{
 
     // App dependencies version
     supportLibraryVersion = "27.0.2"
-    retrofitVersion = "2.1.0"
+    retrofitVersion = "2.2.0"
     glideVersion = "3.7.0"
     loggerVersion = "2.1.1"
     eventbusVersion = "3.0.0"
