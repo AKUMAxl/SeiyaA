@@ -8,6 +8,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.xl.module_library.Manager.ViewManager;
@@ -35,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements NetState
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //butterknife.ButterKnife.inject(this);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         ViewManager.getInstance().addActivity(this);
         //检测网络状态 以决定是否加载网络错误页
         if (checkNetState()){

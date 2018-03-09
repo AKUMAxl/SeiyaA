@@ -7,5 +7,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="toolsBarH">45dp</dimen>
+    <dimen name="division_line">0.5dp</dimen>
+    <dimen name="padding_common">10dp</dimen>
+
 
 </resources>

@@ -15,6 +15,8 @@
     <color name="bl">#1C8CFD</color>
     <color name="white">#ffffff</color>
 
+    <color name="colorDivison">#33aaaaaa</color>
+
 
     <!--zxing-->
     <color name="contents_text">#ff000000</color>

@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.google.gson.Gson;
@@ -46,6 +47,7 @@ public class NbaActivity extends BaseActivity implements NbaView{
 
     @Override
     public void loadView() {
+
         setContentView(R.layout.activity_nba);
         rv = findViewById(R.id.rv);
         refreshLayout = findViewById(R.id.nba_sfl);
