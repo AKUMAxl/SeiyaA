@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:theme="@style/AppTheme.NoActionBar"
+        android:theme="@style/Seiya_Theme"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolsBarH"
         android:background="?attr/colorPrimary"

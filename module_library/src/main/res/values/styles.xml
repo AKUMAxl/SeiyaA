@@ -1,82 +1,12 @@
 <resources>
 
-
-    <!-- Base application theme. -->
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Seiya_Theme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowNoTitle">true</item>
     </style>
 
-
-    <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:divider">@drawable/ic_list_divider</item>
-        <item name="android:dividerHeight">@dimen/division_line</item>
-        <item name="android:listDivider">@drawable/ic_list_divider</item>
-        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
-        <!--<item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>-->
-    </style>
-
-    <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
-        <item name="llEmptyImage">@drawable/ic_empty</item>
-        <item name="llErrorImage">@drawable/ic_error</item>
-        <item name="llLoadingResId">@layout/common_loading</item>
-    </style>
-    <style name="LoadingLayout">
-    </style>
-
-    <style name="LoadingLayout.Style">
-        <item name="llEmptyResId">@layout/_loading_layout_empty</item>
-        <item name="llLoadingResId">@layout/_loading_layout_loading</item>
-        <item name="llErrorResId">@layout/_loading_layout_error</item>
-
-        <item name="llTextColor">#999999</item>
-        <item name="llTextSize">16sp</item>
-
-        <item name="llButtonTextColor">#999999</item>
-        <item name="llButtonTextSize">16sp</item>
-        <item name="llButtonBackground">@drawable/_loading_layout_button</item>
-
-        <item name="llEmptyImage">@null</item>
-        <item name="llEmptyText">暂无数据</item>
-        <item name="llErrorImage">@null</item>
-        <item name="llErrorText">无网络连接，请检查您的网络...</item>
-        <item name="llRetryText">加载失败，点击重试~~</item>
-    </style>
-
-    <style name="Seiya_Theme" parent="Theme.AppCompat.NoActionBar">
-
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-    </style>
-
-    <!-- Base application theme. -->
-    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorPrimary</item>
-
-    </style>
-
-    <style name="AppTheme" parent="Base.AppTheme" />
-
-    <!--无ActionBar的AppTheme-->
-    <style name="AppTheme.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorPrimary</item>
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">false</item>
-    </style>
 
     <!--启动页样式及窗口背景-->
     <!--<style name="SplashTheme" parent="TransparentStatusBarTheme">-->
@@ -84,19 +14,12 @@
     <!--<item name="android:windowFullscreen">false</item>-->
     <!--</style>-->
 
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <!--全屏-->
-    <style name="FullscreenTheme" parent="AppTheme.NoActionBar">
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@null</item>
-    </style>
 
     <!-- 自定义loading dialog -->
     <style name="ProgressDialogTheme" parent="Theme.AppCompat.Light.Dialog">

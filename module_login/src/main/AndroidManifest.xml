@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application android:theme="@style/AppTheme.NoActionBar">
+    <application android:theme="@style/Seiya_Theme">
         
         <activity
             android:name=".LoginActivity"
