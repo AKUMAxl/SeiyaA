@@ -20,6 +20,11 @@ public abstract class BaseFragment extends Fragment {
         this.mActivity = (BaseActivity) context;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mActivity = null;
+    }
 
     /**
      * 获取宿主Activity

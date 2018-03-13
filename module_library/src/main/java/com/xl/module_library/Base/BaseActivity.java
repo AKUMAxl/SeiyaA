@@ -36,7 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity implements NetState
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //butterknife.ButterKnife.inject(this);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         ViewManager.getInstance().addActivity(this);
         //检测网络状态 以决定是否加载网络错误页
         if (checkNetState()){
